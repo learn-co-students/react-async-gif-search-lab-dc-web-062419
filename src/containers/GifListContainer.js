@@ -6,7 +6,10 @@ import GifSearch from '../components/GifSearch';
 
 const GifListWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-gap: 25px;
+  width: 80vw;
+  margin: 0 auto;
 `;
 
 export default class GifListContainer extends Component {
@@ -44,12 +47,12 @@ export default class GifListContainer extends Component {
   render() {
     return (
       <GifListWrapper>
-        <GifList gifs={this.state.gifs} />
         <GifSearch
           searchTerm={this.state.searchTerm}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
+        <GifList gifs={this.state.gifs} />
       </GifListWrapper>
     );
   }

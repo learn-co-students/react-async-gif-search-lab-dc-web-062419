@@ -4,8 +4,9 @@ import styled from 'styled-components';
 const Input = styled.input`
   border: none;
   text-align: center;
-  border-bottom: 1px solid black;
-
+  border-bottom: 1px solid grey;
+  width: 50%;
+  margin: 0 auto;
   :focus {
     outline: none;
   }
@@ -14,7 +15,8 @@ const Input = styled.input`
 const Button = styled.button`
   background: #fff;
   border: 1px solid black;
-
+  width: 25%;
+  margin: 0 auto;
   :hover {
     background: #000;
     color: white;
@@ -26,7 +28,8 @@ const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
-  height: 100px;
+  width: 50%;
+  margin: 0 auto;
 `;
 
 export default class GifSearch extends Component {
