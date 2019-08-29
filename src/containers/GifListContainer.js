@@ -22,13 +22,16 @@ export default class GifListContainer extends React.Component {
         .then(res => res.json())
         .then(res => {
             this.setState({gifList: res.data.slice(0,3)})
+        }).catch(res => {
+            setTimeout(this.submitHandle, 1000)
         })
     }
 
     changeInput = event =>{
-
-        this.setState({searchInput: event.target.value}, this.submitHandle)
-
+        this.setState({searchInput: event.target.value})
+       if(event.target.value.length > 1){
+          this.submitHandle()
+       }
     }
 
     componentDidMount(){
@@ -38,8 +41,8 @@ export default class GifListContainer extends React.Component {
     render(){
     return (
         <div>
-            {this.state.gifList.map(gif => <GifList gif={gif} key={gif.id}/> )}
             <GifSearch searchInput={this.state.searchInput} changeInput={this.changeInput}/>
+            <div>{this.state.gifList.map(gif => <GifList gif={gif} key={gif.id}/> )}</div>
         </div>
     )
 

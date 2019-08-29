@@ -8,15 +8,17 @@ export default class GifSearch extends React.Component {
 
 
 
+    /* // <form onSubmit={this.props.submitHandle}> */
+    /* //  <button>Submit</button>
+    // </form>   */
       
 
     render(){
 
     return (
-        // <form onSubmit={this.props.submitHandle}>
+        <div>
         <input value={this.props.searchInput} onChange={this.props.changeInput}></input>
-        //  <button>Submit</button>
-        // </form>   
+        </div> 
     )
 
     }
